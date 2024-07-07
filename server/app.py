@@ -78,14 +78,6 @@ class RestPizzas(Resource):
             return make_response({'errors' : ["validation errors"]}, 400)
         else:
             new_validated_price = new_price
-        # if new_restaurant_id not in Restaurant.query.filter(Restaurant.id).all():
-        #     return make_response({'error': "Enter a restaurant id that exists."}, 400)
-        # else:
-        #     new_validated_restaurant_id = new_restaurant_id
-        # if new_pizza_id not in Pizza.query.filter(Pizza.id).all():
-        #     return make_response({"error": "Enter a pizza id that's valid"}, 400)
-        # else:
-        #     new_validated_pizza_id = new_pizza_id
 
         new_restaurant_pizza = RestaurantPizza(
             price = new_validated_price,
@@ -99,7 +91,6 @@ class RestPizzas(Resource):
         response = make_response(new_restaurant_pizza_dict, 201)
         return response
         
-            # return make_response({"errors": ["validation errors"]}, 400)
         
 
 
